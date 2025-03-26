@@ -2,7 +2,9 @@
 
 convert LaTeX math expressions into formula code for SQL, Excel, C++, etc.
 
-LaTeX2Formula is a Python graphical program that converts LaTeX mathematical expressions into formula code for various platforms such as SQL, Excel, or C++. By default, it translates common constructs like fractions, square roots, and exponentiation into SQL-style function calls (using `POWER` and `SQRT`), but you can easily customize these global settings to suit your needs.
+![LaTeX2Formula](screenshot.webp)
+
+LaTeX2Formula is a Python graphical program that converts LaTeX mathematical expressions into formula code for various platforms such as SQL, Excel, or C++. By default, it translates common constructs like fractions, square roots, and exponentiation into SQL-style function calls (using `POWER` and `SQRT`), but you can easily customize these settings to suit your needs.
 
 This tool is particularly useful when combined with OCR applications such as [LaTeX-OCR](https://github.com/lukas-blecher/LaTeX-OCR). For example, you can extract LaTeX formulas from Wikipedia images and then convert them into SQL code with LaTeX2Formula.
 
@@ -49,8 +51,14 @@ SQRT(POWER((y+x)/(z-q),2)+POWER((a* b)/(c* d),2))
 By default, the tool uses:
 
 ```python
+# latex2formula.py
+
 POWER_FUNCT_NAME = "POWER"
 SQRT_FUNCT_NAME = "SQRT"
 ```
 
 If you prefer different function names (for example, `pow` in C++ or Excel functions), simply edit these variables at the beginning of the script.
+
+## Limitations
+
+This tool supports only a limited subset of LaTeX syntax. Currently, it can handle multiplication expressed with `\cdot`, fractions (`\frac{...}{...}`), exponentiation (`^{...}`), addition, subtraction, and the use of brackets for grouping. More advanced constructs, such as trigonometric functions (e.g., sin, cos, tan), derivatives, and integrals, are not supported.
