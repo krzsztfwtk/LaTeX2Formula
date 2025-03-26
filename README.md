@@ -1,5 +1,7 @@
 # LaTeX2Formula
 
+*See also: [LaTeX2Formula Web version](https://github.com/krzsztfwtk/LaTeX2Formula)*
+
 convert LaTeX math expressions into formula code for SQL, Excel, C++, etc.
 
 ![LaTeX2Formula](screenshot.webp)
